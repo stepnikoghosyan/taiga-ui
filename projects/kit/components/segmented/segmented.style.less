@@ -12,13 +12,13 @@ tui-segmented {
         --t-padding: 0.625rem;
         --t-gap: 0.5rem;
         --t-margin: -0.125rem;
+        --t-height: var(--tui-height-s);
 
-        block-size: var(--tui-height-s);
         font: var(--tui-font-text-s);
         border-radius: var(--tui-radius-s);
 
-        & > *::before,
-        & > *::after,
+        > *::before,
+        > *::after,
         tui-icon {
             font-size: 1rem;
         }
@@ -28,8 +28,8 @@ tui-segmented {
         --t-padding: 0.875rem;
         --t-gap: 1rem;
         --t-margin: -0.375rem;
+        --t-height: var(--tui-height-m);
 
-        block-size: var(--tui-height-m);
         font: var(--tui-font-text-m);
         border-radius: var(--tui-radius-s);
     }
@@ -38,8 +38,8 @@ tui-segmented {
         --t-padding: 1.125rem;
         --t-gap: 1rem;
         --t-margin: -0.375rem;
+        --t-height: var(--tui-height-l);
 
-        block-size: var(--tui-height-l);
         font: var(--tui-font-text-l);
         border-radius: var(--tui-radius-m);
         border-width: 0.25rem;
@@ -60,6 +60,7 @@ tui-segmented {
         display: flex;
         align-items: center;
         justify-content: center;
+        block-size: var(--t-height);
         white-space: nowrap;
         gap: var(--t-gap);
         margin: 0;
@@ -70,7 +71,7 @@ tui-segmented {
         font: inherit;
         border-radius: inherit;
 
-        & > *,
+        > *,
         &::before,
         &::after {
             margin: 0 var(--t-margin);
@@ -97,12 +98,13 @@ tui-segmented {
     }
 
     &::before {
-        .transition(~'left, width');
+        .transition(~'top, left, width');
 
         content: '';
         position: absolute;
         left: var(--t-left);
-        block-size: 100%;
+        top: var(--t-top);
+        block-size: var(--t-height);
         inline-size: var(--t-width);
         border-radius: inherit;
         background: currentColor;
