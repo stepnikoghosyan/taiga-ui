@@ -28,6 +28,9 @@ import {BehaviorSubject, map, merge, of, switchMap, timer} from 'rxjs';
 import type {TuiInputCopyOptions} from './input-copy.options';
 import {TUI_INPUT_COPY_OPTIONS} from './input-copy.options';
 
+/**
+ * @deprecated use {@link TuiCopy} with {@link TuiTextfield}
+ */
 @Component({
     selector: 'tui-input-copy',
     templateUrl: './input-copy.template.html',
